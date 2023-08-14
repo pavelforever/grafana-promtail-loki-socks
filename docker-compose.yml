@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 networks:
   loki:
 services:
@@ -32,3 +32,10 @@ services:
     restart: unless-stopped
     networks:
       - loki
+  nginx:
+      image: nginx:latest
+      ports:
+        - "8082:80"
+      labels:
+        logging: "promtail"
+        logging_jobname: "containerlogs"

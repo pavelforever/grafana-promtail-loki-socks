@@ -24,6 +24,9 @@ schema_config:
       index:
         prefix: index_
         period: 24h
+limits_config:
+  per_stream_rate_limit: 100MB
+  ingestion_rate_mb: 99999999
 
 ruler:
   alertmanager_url: http://localhost:9093
